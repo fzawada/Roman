@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecimalFactors\Equality_tests.cs" />
+    <Compile Include="DecimalFactors\When_creating.cs" />
     <Compile Include="Integer_to_roman_translation_tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="When_translating_single_decimal_factor_to_roman_part.cs" />
@@ -55,6 +57,9 @@
       <Project>{05473008-334b-4eb6-b0e8-89a8921882ac}</Project>
       <Name>RomanNumeralTranslator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DecimalFactors\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

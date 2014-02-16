@@ -40,7 +40,7 @@ namespace RomanNumeralTranslator.Tests
             var actualRoman = Translator.ToRoman(integer);
 
             //assert
-            Assert.AreSame(
+            Assert.AreEqual(
                 expectedRoman,
                 actualRoman,
                 string.Format(

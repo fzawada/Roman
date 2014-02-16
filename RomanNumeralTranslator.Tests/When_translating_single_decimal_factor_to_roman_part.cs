@@ -39,17 +39,7 @@ namespace RomanNumeralTranslator.Tests
                 ));
         }
 
-        public struct DecimalFactor
-        {
-            public DecimalFactor(int integer) : this()
-            {
-                //validate input
-                //transform to multiplier and exponent
-            }
-
-            public int Multiplier { get; set; }
-            public int Exponent { get; set; }
-        }
+        
 
         public struct RomanNumeralSymbol
         {
