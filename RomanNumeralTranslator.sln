@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanNumeralTranslator", "RomanNumeralTranslator\RomanNumeralTranslator.csproj", "{05473008-334B-4EB6-B0E8-89A8921882AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanNumeralTranslator.Tests", "RomanNumeralTranslator.Tests\RomanNumeralTranslator.Tests.csproj", "{313A7C33-BCB4-41C2-9E96-692E1AA8EF18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05473008-334B-4EB6-B0E8-89A8921882AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05473008-334B-4EB6-B0E8-89A8921882AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05473008-334B-4EB6-B0E8-89A8921882AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05473008-334B-4EB6-B0E8-89A8921882AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{313A7C33-BCB4-41C2-9E96-692E1AA8EF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{313A7C33-BCB4-41C2-9E96-692E1AA8EF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{313A7C33-BCB4-41C2-9E96-692E1AA8EF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{313A7C33-BCB4-41C2-9E96-692E1AA8EF18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
