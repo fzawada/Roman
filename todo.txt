@@ -4,7 +4,10 @@ v write an acceptance test first
 - create an interface of the above mentioned decimal factorizer
 - implement the factorizer
 
-- [algo main step 2] translate each part into corresponding roman representation
+!- [algo main step 2] translate each part into corresponding roman representation
+- implement decimal factor
+- implement roman numerals symbol
+
 - [algo final step] join the resulting roman parts to get the final result
 
 
