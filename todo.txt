@@ -1,0 +1,11 @@
+Main objective 1: translate integers to roman numerals
+- write an acceptance test first
+- [algo main step 1] split numbers into a list of powers of ten
+- [algo main step 2] translate each part into corresponding roman representation
+- [algo final step] join the resulting roman parts to get the final result
+
+
+
+=================
+Main objective 2:
+- translate roman to integers
