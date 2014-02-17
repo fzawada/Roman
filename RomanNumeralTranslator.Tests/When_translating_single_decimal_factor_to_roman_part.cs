@@ -5,7 +5,7 @@ namespace RomanNumeralTranslator.Tests
 {
     class When_translating_single_decimal_factor_to_roman_part
     {
-        [Test, Ignore("DecimalFactor and RomanNumeralSymbol implemenatation needed")]
+        [Test]
         [TestCase(6, "VI")]
         [TestCase(10, "X")]
         [TestCase(20, "XX")]
@@ -25,10 +25,10 @@ namespace RomanNumeralTranslator.Tests
             var decimalFactor = new DecimalFactor(decimalFactorInteger);
 
             //act
-            string actualRomanPart = DecimalFactorToRomanPartTranslator.Translate(decimalFactor);
+            var actualRomanPart = DecimalFactorToRomanPartTranslator.Translate(decimalFactor);
 
             //assert
-            Assert.AreSame(
+            Assert.AreEqual(
                 expectedRomanPart,
                 actualRomanPart,
                 string.Format(
@@ -39,28 +39,20 @@ namespace RomanNumeralTranslator.Tests
                 ));
         }
 
-        
-
-        public struct RomanNumeralSymbol
-        {
-            public static RomanNumeralSymbol BaseUnitForExponent(int exponent)
-            {
-                return new RomanNumeralSymbol();
-            }
-
-            public static RomanNumeralSymbol HalfwayAfterBaseUnitForExponent(int exponent)
-            {
-                return new RomanNumeralSymbol();
-            }
-        }
 
         public class DecimalFactorToRomanPartTranslator
         {
             public static string Translate(DecimalFactor decimalFactor)
             {
                 var baseUnit = RomanNumeralSymbol.BaseUnitForExponent(decimalFactor.Exponent);
-                var halfway = RomanNumeralSymbol.HalfwayAfterBaseUnitForExponent(decimalFactor.Exponent);
-                var nextBaseUnit = RomanNumeralSymbol.BaseUnitForExponent(decimalFactor.Exponent + 1);
+                string halfway = string.Empty;
+                string nextBaseUnit = string.Empty;
+
+                if (decimalFactor.Exponent < 3)
+                {
+                    halfway = RomanNumeralSymbol.HalfwayAfterBaseUnitForExponent(decimalFactor.Exponent);
+                    nextBaseUnit = RomanNumeralSymbol.BaseUnitForExponent(decimalFactor.Exponent + 1);
+                }
 
                 var multiplier = decimalFactor.Multiplier;
                 if (multiplier == 0)
@@ -69,39 +61,39 @@ namespace RomanNumeralTranslator.Tests
                 }
                 if (multiplier == 1)
                 {
-                    return baseUnit.ToString();
+                    return baseUnit;
                 }
                 if (multiplier == 2)
                 {
-                    return baseUnit.ToString() + baseUnit.ToString();
+                    return baseUnit + baseUnit;
                 }
                 if (multiplier == 3)
                 {
-                    return baseUnit.ToString() + baseUnit.ToString() + baseUnit.ToString();
+                    return baseUnit + baseUnit + baseUnit;
                 }
                 if (multiplier == 4)
                 {
-                    return baseUnit.ToString() + halfway.ToString();
+                    return baseUnit + halfway;
                 }
                 if (multiplier == 5)
                 {
-                    return halfway.ToString();
+                    return halfway;
                 }
                 if (multiplier == 6)
                 {
-                    return halfway.ToString() + baseUnit.ToString();
+                    return halfway + baseUnit;
                 }
                 if (multiplier == 7)
                 {
-                    return halfway.ToString() + baseUnit.ToString() + baseUnit.ToString();
+                    return halfway + baseUnit + baseUnit;
                 }
                 if (multiplier == 8)
                 {
-                    return halfway.ToString() + baseUnit.ToString() + baseUnit.ToString() + baseUnit.ToString();
+                    return halfway + baseUnit + baseUnit + baseUnit;
                 }
                 if (multiplier == 9)
                 {
-                    return baseUnit.ToString() + nextBaseUnit.ToString();
+                    return baseUnit + nextBaseUnit;
                 }
 
                 throw new ArgumentException(
