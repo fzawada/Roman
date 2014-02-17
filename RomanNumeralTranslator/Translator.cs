@@ -24,5 +24,10 @@ namespace RomanNumeralTranslator
 
             return romanRepresentationParts.ToString();
         }
+
+        public static int ToInteger(string romanNumber)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

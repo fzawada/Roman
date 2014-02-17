@@ -15,7 +15,7 @@ v [algo final step] join the resulting roman parts to get the final result
 
 =================
 Main objective 2: translate roman to integers
-- write an acceptance test first
+v write an acceptance test first
 - [algo main step1] validate input string
   - do not use the same symbol more than three times
   - only powers of ten can be subtracted

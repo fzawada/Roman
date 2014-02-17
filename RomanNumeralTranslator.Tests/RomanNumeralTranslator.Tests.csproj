@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RomanNumeralSymbols\When_getting_halfway_after_base_unit_for_exponent.cs" />
     <Compile Include="RomanNumeralSymbols\When_getting_base_unit_for_exponent.cs" />
+    <Compile Include="Roman_to_integer_translation_tests.cs" />
     <Compile Include="When_translating_single_decimal_factor_to_roman_part.cs" />
   </ItemGroup>
   <ItemGroup>
