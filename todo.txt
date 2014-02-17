@@ -21,6 +21,6 @@ v write an acceptance test first
   - only powers of ten can be subtracted
   - only one number can be subtracted from another
   - cannot subtract a number from one that is more than ten times bigger
-- (?) accept RomanNumber instead of a string
+!- accept RomanNumber instead of a string (to e.g. avoid casing issues)
 
 - [algo main step2] walk the roman number and add/subtract values corresponding to symbols

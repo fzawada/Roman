@@ -32,8 +32,11 @@ namespace RomanNumeralTranslator.Tests
         [TestCase("MMM", 3000)]
         [TestCase("IC", 0, ExpectedException = typeof (ArgumentException))]
         [TestCase("VX", 0, ExpectedException = typeof (ArgumentException))]
-        public void Case(string romanNumber, int expectedInteger)
+        public void Case(string romanNumberString, int expectedInteger)
         {
+            //arrange
+            var romanNumber = RomanNumber.Parse(romanNumberString);
+
             //act
             var actualInteger = Translator.ToInteger(romanNumber);
 
