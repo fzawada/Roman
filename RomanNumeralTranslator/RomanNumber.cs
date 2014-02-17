@@ -1,4 +1,6 @@
-﻿namespace RomanNumeralTranslator
+﻿using System.Globalization;
+
+namespace RomanNumeralTranslator
 {
     public struct RomanNumber
     {
@@ -6,7 +8,8 @@
 
         public static RomanNumber Parse(string stringRepresentation)
         {
-            return new RomanNumber(stringRepresentation.ToUpper());
+            var uppercased = stringRepresentation.ToUpper(CultureInfo.InvariantCulture);
+            return new RomanNumber(uppercased);
         }
 
         public RomanNumber(string stringRepresentation)
