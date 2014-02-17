@@ -9,7 +9,7 @@ v implement decimal factor
 v implement roman numerals symbol
 - (?) get rid of magic strings and replace them with a proper RomanNumeralSymbol impl
 
-- [algo final step] join the resulting roman parts to get the final result
+v [algo final step] join the resulting roman parts to get the final result
 
 
 

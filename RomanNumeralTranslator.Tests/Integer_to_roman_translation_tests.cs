@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace RomanNumeralTranslator.Tests
 {
-    [Ignore("Not implemented yet. This is for final verification.")]
     [TestFixture(Category = "acceptance")]
     internal class Integer_to_roman_translation_tests
     {
