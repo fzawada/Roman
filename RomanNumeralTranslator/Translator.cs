@@ -10,8 +10,10 @@ namespace RomanNumeralTranslator
             if (integer < 1 || integer > 3000)
             {
                 throw new ArgumentOutOfRangeException(
+                    "integer",
                     "Only numbers from the range [1..3000] are supported");
             }
+
             var decimalFactors = DecimalFactorizer.Factorize(integer);
             var romanRepresentationParts = new StringBuilder();
             foreach (var decimalFactor in decimalFactors)

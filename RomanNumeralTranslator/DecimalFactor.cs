@@ -4,8 +4,8 @@ namespace RomanNumeralTranslator
 {
     public struct DecimalFactor : IEquatable<DecimalFactor>
     {
-        public int Multiplier { get; set; }
-        public int Exponent { get; set; }
+        public int Multiplier { get; private set; }
+        public int Exponent { get; private set; }
 
         public DecimalFactor(int integer)
             : this()

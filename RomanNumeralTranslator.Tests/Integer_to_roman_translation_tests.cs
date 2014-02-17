@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace RomanNumeralTranslator.Tests
 {
     [TestFixture(Category = "acceptance")]
-    internal class Integer_to_roman_translation_tests
+    class Integer_to_roman_translation_tests
     {
         [Test]
         [TestCase(1, "I")]
