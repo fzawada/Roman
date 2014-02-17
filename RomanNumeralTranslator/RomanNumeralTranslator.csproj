@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="DecimalFactor.cs" />
     <Compile Include="DecimalFactorizer.cs" />
+    <Compile Include="DecimalFactorToRomanPartTranslator.cs" />
     <Compile Include="RomanNumeralSymbol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Translator.cs" />
