@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Decimal_factorizer_tests.cs" />
     <Compile Include="DecimalFactors\Equality_tests.cs" />
     <Compile Include="DecimalFactors\When_creating.cs" />
     <Compile Include="Integer_to_roman_translation_tests.cs" />

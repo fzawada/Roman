@@ -1,13 +1,13 @@
 Main objective 1: translate integers to roman numerals
 v write an acceptance test first
-- [algo main step 1] split numbers into a list of powers of ten
-- create an interface of the above mentioned decimal factorizer
-- implement the factorizer
+v [algo main step 1] split numbers into a list of powers of ten
+v create an interface of the above mentioned decimal factorizer
+v implement the factorizer
 
 v [algo main step 2] translate each part into corresponding roman representation
 v implement decimal factor
 v implement roman numerals symbol
-- get rid of magic strings and replace them with a proper RomanNumeralSymbol impl
+- (?) get rid of magic strings and replace them with a proper RomanNumeralSymbol impl
 
 - [algo final step] join the resulting roman parts to get the final result
 
