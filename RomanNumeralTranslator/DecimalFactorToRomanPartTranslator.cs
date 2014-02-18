@@ -2,7 +2,7 @@
 
 namespace RomanNumeralTranslator
 {
-    public class DecimalFactorToRomanPartTranslator
+    public static class DecimalFactorToRomanPartTranslator
     {
         public static string Translate(DecimalFactor decimalFactor)
         {

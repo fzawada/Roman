@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
 
 namespace RomanNumeralTranslator
 {
@@ -26,7 +28,7 @@ namespace RomanNumeralTranslator
             this.value = value;
         }
 
-        public static string BaseUnitForExponent(int exponent)
+        public static RomanNumeralSymbol BaseUnitForExponent(int exponent)
         {
             if (exponent < 0 || exponent > 3)
             {
@@ -35,25 +37,25 @@ namespace RomanNumeralTranslator
 
             if (exponent == 0)
             {
-                return "I";
+                return I;
             }
             if (exponent == 1)
             {
-                return "X";
+                return X;
             }
             if (exponent == 2)
             {
-                return "C";
+                return C;
             }
             if (exponent == 3)
             {
-                return "M";
+                return M;
             }
 
             throw new Exception("This part should be unreachable. exponent=" + exponent);
         }
 
-        public static string HalfwayAfterBaseUnitForExponent(int exponent)
+        public static RomanNumeralSymbol HalfwayAfterBaseUnitForExponent(int exponent)
         {
             if (exponent < 0 || exponent > 2)
             {
@@ -61,23 +63,39 @@ namespace RomanNumeralTranslator
             }
             if (exponent == 0)
             {
-                return "V";
+                return V;
             }
             if (exponent == 1)
             {
-                return "L";
+                return L;
             }
             if (exponent == 2)
             {
-                return "D";
+                return D;
             }
 
             throw new Exception("This part should be unreachable. exponent=" + exponent);
         }
 
+        public static implicit operator string(RomanNumeralSymbol rns)
+        {
+            return rns.ToString();
+        }
+
+        public static explicit operator RomanNumeralSymbol(char symbol)
+        {
+            var rns = All.SingleOrDefault(x => x.Symbol == symbol);
+            if (rns == null)
+            {
+                throw new ArgumentException(
+                    string.Format("There is no roman numeral symbol for '{0}'", symbol));
+            }
+            return rns;
+        }
+
         public override string ToString()
         {
-            return symbol.ToString();
+            return symbol.ToString(CultureInfo.InvariantCulture);
         }
 
         public override bool Equals(object obj)

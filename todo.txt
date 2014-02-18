@@ -19,7 +19,7 @@ v write an acceptance test first
 - [algo main step1] validate input string
   v do not use the same symbol more than three times
   v make sure there are no invalid characters in the input string
-  - RomanNumeralSymbol's XUnitForExponent methods should return RomanNumeralSymbols instead of magic strings
+  v RomanNumeralSymbol's XUnitForExponent methods should return RomanNumeralSymbols instead of magic strings
   - only powers of ten can be subtracted
   - only one number can be subtracted from another
   - cannot subtract a number from one that is more than ten times bigger

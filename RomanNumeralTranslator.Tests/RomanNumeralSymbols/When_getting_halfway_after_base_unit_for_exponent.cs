@@ -6,11 +6,14 @@ namespace RomanNumeralTranslator.Tests.RomanNumeralSymbols
     class When_getting_halfway_after_base_unit_for_exponent
     {
         [Test]
-        [TestCase(0, "V")]
-        [TestCase(1, "L")]
-        [TestCase(2, "D")]
-        public void Case(int exponent, string expectedSymbol)
+        [TestCase(0, 'V')]
+        [TestCase(1, 'L')]
+        [TestCase(2, 'D')]
+        public void Case(int exponent, char expectedSymbolString)
         {
+            //arrange
+            var expectedSymbol = (RomanNumeralSymbol) expectedSymbolString;
+
             //act
             var actualSymbol = RomanNumeralSymbol.HalfwayAfterBaseUnitForExponent(exponent);
 
