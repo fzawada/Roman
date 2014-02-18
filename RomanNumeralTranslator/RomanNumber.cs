@@ -78,6 +78,11 @@ namespace RomanNumeralTranslator
 
                     ValidatePowersOtherThanTenCannotBeSubtracted(stringRepresentation, previousSymbolValue);
 
+                    ValidateNumbersSmallerThanTenTimesCannotBeSubtracted(
+                        stringRepresentation,
+                        previousSymbolValue,
+                        currentSymbol.Value);
+
                     clusterLength = 1;
                     previousSymbolValue = currentSymbol.Value;
                 }
@@ -109,6 +114,23 @@ namespace RomanNumeralTranslator
                 throw new ArgumentException(
                     string.Format("String representation of a roman number ({0}) was invalid. " +
                                   "Only powers of ten can be subtracted.",
+                                  stringRepresentation));
+            }
+        }
+
+        private static void ValidateNumbersSmallerThanTenTimesCannotBeSubtracted(
+            string stringRepresentation,
+            int previousSymbolValue,
+            int currentSymbolValue)
+        {
+            var currentDecreasedTenTimes = currentSymbolValue/10;
+            var currentIsBiggerThanTenTimes = currentDecreasedTenTimes > previousSymbolValue;
+
+            if (currentIsBiggerThanTenTimes)
+            {
+                throw new ArgumentException(
+                    string.Format("String representation of a roman number ({0}) was invalid. " +
+                                  "Cannot subtract a number that is more than ten times smaller",
                                   stringRepresentation));
             }
         }

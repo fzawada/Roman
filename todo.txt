@@ -16,13 +16,13 @@ v [algo final step] join the resulting roman parts to get the final result
 =================
 Main objective 2: translate roman to integers
 v write an acceptance test first
-- [algo main step1] validate input string
+v [algo main step1] validate input string
   v do not use the same symbol more than three times
   v make sure there are no invalid characters in the input string
   v RomanNumeralSymbol's XUnitForExponent methods should return RomanNumeralSymbols instead of magic strings
   v only powers of ten can be subtracted
   v only one number can be subtracted from another
-  - cannot subtract a number from one that is more than ten times bigger
+  v cannot subtract a number from one that is more than ten times bigger
 v accept RomanNumber instead of a string (to e.g. avoid casing issues)
 
 - [algo main step2] walk the roman number and add/subtract values corresponding to symbols

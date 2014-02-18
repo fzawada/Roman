@@ -100,5 +100,18 @@ namespace RomanNumeralTranslator.Tests.RomanNumbers
                 () => RomanNumber.Parse(inputRepresentation),
                 "Input representation: " + inputRepresentation);
         }
+
+        [Test]
+        [TestCase("IC")]
+        [TestCase("IM")]
+        [TestCase("XM")]
+        public void Numbers_smaller_than_ten_times_cannot_be_subtracted(string inputRepresentation)
+        {
+            //act and assert
+            Assert.Throws(
+                typeof (ArgumentException),
+                () => RomanNumber.Parse(inputRepresentation),
+                "Input representation: " + inputRepresentation);
+        }
     }
 }
