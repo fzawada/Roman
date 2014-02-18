@@ -6,6 +6,20 @@ namespace RomanNumeralTranslator.Tests.RomanNumbers
     class When_validating_input_representation
     {
         [Test]
+        [TestCase("A")]
+        [TestCase(" A")]
+        [TestCase("A.")]
+        [TestCase("A.")]
+        [TestCase("I I")]
+        public void Should_reject_strings_with_invalid_characters(string inputRepresentation)
+        {
+            Assert.Throws(
+                typeof (ArgumentException),
+                () => RomanNumber.Parse(inputRepresentation),
+                "Input representation: " + inputRepresentation);
+        }
+
+        [Test]
         [TestCase("IIII")]
         [TestCase("VVVV")]
         [TestCase("XXXX")]
@@ -34,5 +48,7 @@ namespace RomanNumeralTranslator.Tests.RomanNumbers
                 () => RomanNumber.Parse(inputRepresentation),
                 "Input representation: " + inputRepresentation);
         }
+
+
     }
 }
