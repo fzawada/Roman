@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 
 namespace RomanNumeralTranslator
@@ -27,7 +28,27 @@ namespace RomanNumeralTranslator
 
         public static int ToInteger(RomanNumber romanNumber)
         {
-            throw new NotImplementedException();
+            var integer = 0;
+            var symbols = romanNumber.ToList();
+
+            for (int i = 0; i < symbols.Count-1; i++)
+            {
+                var current = symbols[i];
+                var next = symbols[i + 1];
+
+                if (next.Value <= current.Value)
+                {
+                    integer += current.Value;
+                }
+                else
+                {
+                    integer -= current.Value;
+                }
+            }
+
+            integer += symbols.Last().Value;
+
+            return integer;
         }
     }
 }

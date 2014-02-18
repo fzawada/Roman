@@ -6,7 +6,7 @@ namespace RomanNumeralTranslator.Tests
     [TestFixture(Category = "acceptance")]
     class Roman_to_integer_translation_tests
     {
-        [Test, Ignore("Acceptance test. The implementation is not ready yet.")]
+        [Test]
         [TestCase("I", 1)]
         [TestCase("II", 2)]
         [TestCase("III", 3)]

@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace RomanNumeralTranslator
 {
-    public struct RomanNumber
+    public struct RomanNumber : IEnumerable<RomanNumeralSymbol>
     {
         public string StringRepresentation { get; private set; }
 
@@ -22,6 +24,19 @@ namespace RomanNumeralTranslator
             : this()
         {
             StringRepresentation = stringRepresentation;
+        }
+
+        public IEnumerator<RomanNumeralSymbol> GetEnumerator()
+        {
+            foreach (var romanNumeral in StringRepresentation)
+            {
+                yield return (RomanNumeralSymbol)romanNumeral;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
 
         private static void ValidateAllCharacters(string stringRepresentation)

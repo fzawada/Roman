@@ -25,4 +25,4 @@ v [algo main step1] validate input string
   v cannot subtract a number from one that is more than ten times bigger
 v accept RomanNumber instead of a string (to e.g. avoid casing issues)
 
-- [algo main step2] walk the roman number and add/subtract values corresponding to symbols
+v [algo main step2] walk the roman number and add/subtract values corresponding to symbols
