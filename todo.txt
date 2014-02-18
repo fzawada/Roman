@@ -17,7 +17,8 @@ v [algo final step] join the resulting roman parts to get the final result
 Main objective 2: translate roman to integers
 v write an acceptance test first
 - [algo main step1] validate input string
-  - do not use the same symbol more than three times
+  v do not use the same symbol more than three times
+  - make sure there are no invalid characters in the input string
   - only powers of ten can be subtracted
   - only one number can be subtracted from another
   - cannot subtract a number from one that is more than ten times bigger
