@@ -14,7 +14,7 @@ namespace RomanNumeralTranslator
             var uppercased = stringRepresentation.ToUpper(CultureInfo.InvariantCulture);
             ValidateAllCharacters(uppercased);
             ValidateSameSymbolUpToThreeTimesInARow(uppercased);
-            ValidateAtMostOneNumberInARowISubtractedFromAnother(uppercased);
+            ValidateSubtractionRelatedRules(uppercased);
             return new RomanNumber(uppercased);
         }
 
@@ -52,7 +52,7 @@ namespace RomanNumeralTranslator
             }
         }
 
-        private static void ValidateAtMostOneNumberInARowISubtractedFromAnother(string stringRepresentation)
+        private static void ValidateSubtractionRelatedRules(string stringRepresentation)
         {
             int previousSymbolValue = int.MaxValue;
             int clusterLength = 0;
@@ -74,17 +74,42 @@ namespace RomanNumeralTranslator
                 {
                     //subtraction attempted
 
-                    if (clusterLength > 1)
-                    {
-                        throw new ArgumentException(
-                            string.Format("String representation of a roman number ({0}) was invalid. " +
-                                          "More than one symbol to be subtracted.",
-                                          stringRepresentation));
-                    }
+                    ValidateAtMostOneNumberInARowIsSubtractedFromAnother(stringRepresentation, clusterLength);
+
+                    ValidatePowersOtherThanTenCannotBeSubtracted(stringRepresentation, previousSymbolValue);
 
                     clusterLength = 1;
                     previousSymbolValue = currentSymbol.Value;
                 }
+            }
+        }
+
+        private static void ValidateAtMostOneNumberInARowIsSubtractedFromAnother(
+            string stringRepresentation,
+// ReSharper disable UnusedParameter.Local
+            int clusterLength)
+// ReSharper restore UnusedParameter.Local
+        {
+            if (clusterLength > 1)
+            {
+                throw new ArgumentException(
+                    string.Format("String representation of a roman number ({0}) was invalid. " +
+                                  "More than one symbol to be subtracted.",
+                                  stringRepresentation));
+            }
+        }
+
+        private static void ValidatePowersOtherThanTenCannotBeSubtracted(
+            string stringRepresentation,
+            int previousSymbolValue)
+        {
+            var isPowerOfTen = new DecimalFactor(previousSymbolValue).Multiplier == 1;
+            if (!isPowerOfTen)
+            {
+                throw new ArgumentException(
+                    string.Format("String representation of a roman number ({0}) was invalid. " +
+                                  "Only powers of ten can be subtracted.",
+                                  stringRepresentation));
             }
         }
     }

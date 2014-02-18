@@ -33,7 +33,7 @@ namespace RomanNumeralTranslator.Tests.RomanNumbers
         {
             //act and assert
             Assert.Throws(
-                typeof(ArgumentException),
+                typeof (ArgumentException),
                 () => RomanNumber.Parse(inputRepresentation),
                 "Input representation: " + inputRepresentation);
         }
@@ -57,7 +57,7 @@ namespace RomanNumeralTranslator.Tests.RomanNumbers
         {
             //act and assert
             Assert.Throws(
-                typeof(ArgumentException),
+                typeof (ArgumentException),
                 () => RomanNumber.Parse(inputRepresentation),
                 "Input representation: " + inputRepresentation);
         }
@@ -67,6 +67,33 @@ namespace RomanNumeralTranslator.Tests.RomanNumbers
         [TestCase("IX")]
         [TestCase("XC")]
         public void One_number_can_be_subtracted_from_another(string inputRepresentation)
+        {
+            //act and assert
+            Assert.DoesNotThrow(
+                () => RomanNumber.Parse(inputRepresentation),
+                "Input representation: " + inputRepresentation);
+        }
+
+        [Test]
+        [TestCase("VX")]
+        [TestCase("LC")]
+        [TestCase("VC")]
+        [TestCase("DM")]
+        public void Powers_other_than_ten_cannot_be_subtracted(string inputRepresentation)
+        {
+            //act and assert
+            Assert.Throws(
+                typeof (ArgumentException),
+                () => RomanNumber.Parse(inputRepresentation),
+                "Input representation: " + inputRepresentation);
+        }
+
+        [Test]
+        [TestCase("IX")]
+        [TestCase("XC")]
+        [TestCase("XL")]
+        [TestCase("CD")]
+        public void Powers_of_ten_can_be_subtracted(string inputRepresentation)
         {
             //act and assert
             Assert.DoesNotThrow(
