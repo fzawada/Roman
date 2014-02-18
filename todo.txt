@@ -21,7 +21,7 @@ v write an acceptance test first
   v make sure there are no invalid characters in the input string
   v RomanNumeralSymbol's XUnitForExponent methods should return RomanNumeralSymbols instead of magic strings
   - only powers of ten can be subtracted
-  - only one number can be subtracted from another
+  v only one number can be subtracted from another
   - cannot subtract a number from one that is more than ten times bigger
 v accept RomanNumber instead of a string (to e.g. avoid casing issues)
 

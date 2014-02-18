@@ -49,6 +49,29 @@ namespace RomanNumeralTranslator.Tests.RomanNumbers
                 "Input representation: " + inputRepresentation);
         }
 
+        [Test]
+        [TestCase("IIX")]
+        [TestCase("XIIV")]
+        [TestCase("DXIIV")]
+        public void More_than_one_number_cannot_be_subtracted_from_another(string inputRepresentation)
+        {
+            //act and assert
+            Assert.Throws(
+                typeof(ArgumentException),
+                () => RomanNumber.Parse(inputRepresentation),
+                "Input representation: " + inputRepresentation);
+        }
 
+        [Test]
+        [TestCase("IV")]
+        [TestCase("IX")]
+        [TestCase("XC")]
+        public void One_number_can_be_subtracted_from_another(string inputRepresentation)
+        {
+            //act and assert
+            Assert.DoesNotThrow(
+                () => RomanNumber.Parse(inputRepresentation),
+                "Input representation: " + inputRepresentation);
+        }
     }
 }
